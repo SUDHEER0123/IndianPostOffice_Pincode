@@ -69,12 +69,12 @@ const Navbar = () => {
       <div className="details">
         {post &&
           post.map((obj, index) => (
-            <div className="post" key={index}>
-              <div className="aboutPost">Post Office Name: {obj.Name}</div>
-              <div className="aboutPost">Region: {obj.Region}</div>
-              <div className="aboutPost">District: {obj.District}</div>
-              <div className="aboutPost">Block: {obj.Block}</div>
-              <div className="aboutPost">State: {obj.State}</div>
+            <div className={state==="light" ? "post" :"apost"} key={index}>
+              <div className={state==="light"? "aboutPost" :"aboutaPost"}>Post Office Name: {obj.Name}</div>
+              <div className={state==="light"? "aboutPost" :"aboutaPost"}>Region: {obj.Region}</div>
+              <div className={state==="light"? "aboutPost" :"aboutaPost"}>District: {obj.District}</div>
+              <div className={state==="light"? "aboutPost" :"aboutaPost"}>Block: {obj.Block}</div>
+              <div className={state==="light"? "aboutPost" :"aboutaPost"}>State: {obj.State}</div>
             </div>
           ))}
       </div>

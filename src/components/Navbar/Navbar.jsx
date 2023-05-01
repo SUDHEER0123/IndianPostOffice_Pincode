@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 
 const Navbar = () => {
   const [pincode, setPincode] = useState();
-  const[loader, setLoader]=useState(true);
+  const[loader, setLoader]=useState(false);
   const [post, setPost] = useState([]);
   const inp = useRef();
 
@@ -24,9 +24,11 @@ const Navbar = () => {
         inp.current.value = "";
         return;
       }
+      
     }
 
     fetchData();
+    
   }, [pincode]);
 
   function onChangeHandler() {
@@ -36,6 +38,7 @@ const Navbar = () => {
       return;
     }
     setPincode(inp.current.value);
+    setLoader(true);
   }
 
   const {setState, state} = useContext(myContext);

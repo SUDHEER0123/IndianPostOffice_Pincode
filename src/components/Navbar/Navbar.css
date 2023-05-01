@@ -81,19 +81,22 @@
     height: 38px;
     width: 200px;
     text-align: center;
+    z-index: 1;
 }
 
-.searchBtn{
+/* .searchBtn{
     margin-left: 10px;
     border-radius: 5px;
     width: 80px;
     height: 38px;
-    cursor: pointer;   
-}
+    cursor: pointer;
+    z-index: 1;   
+} */
 button{
     margin-left: 10px;
     border-radius: 5px;
     width: 100px;
     height: 38px;
     cursor: pointer;  
+    z-index: 1; 
 }

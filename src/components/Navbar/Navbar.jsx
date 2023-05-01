@@ -38,7 +38,10 @@ const Navbar = () => {
       return;
     }
     setPincode(inp.current.value);
-    setLoader(true);
+    if(inp.current.value!==pincode){
+      setLoader(true);
+    }
+    
   }
 
   const {setState, state} = useContext(myContext);

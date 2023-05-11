@@ -2,10 +2,11 @@
     display: grid;
     /* height: 90vh;
     width: 100px; */
+    width: fit-content;
     grid-template-columns: repeat(5,290px);
     grid-template-rows: repeat(4,200px);
     gap: 15px;
-    margin: 5px;
+    margin: auto;
   
 }
 #loader{

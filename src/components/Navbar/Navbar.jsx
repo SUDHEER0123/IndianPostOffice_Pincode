@@ -12,7 +12,7 @@ const Navbar = () => {
   const cntnr=useRef();
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData= async()=> {
       const response = await axios.get(
         `https://api.postalpincode.in/pincode/${pincode}`
       );

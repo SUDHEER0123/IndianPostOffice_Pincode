@@ -23,14 +23,16 @@ const Navbar = () => {
       } else if (response.data[0].Status === "Error") {
         alert("Enter the correct pincode");
         inp.current.value = "";
+        setPost('');
+        setLoader(false);
         return;
       }
-      if(response.data[0].PostOffice.length<5){
-        cntnr.current.style.gridTemplateColumns=`repeat(${response.data[0].PostOffice.length},290px)`;
-      }
-      else {
-        cntnr.current.style.gridTemplateColumns=`repeat(5,290px)`;
-      }
+      // if(response.data[0].PostOffice.length<5){
+      //   cntnr.current.style.gridTemplateColumns=`repeat(${response.data[0].PostOffice.length},290px)`;
+      // }
+      // else {
+      //   cntnr.current.style.gridTemplateColumns=`repeat(5,290px)`;
+      // }
       
     }
 
@@ -68,6 +70,7 @@ const Navbar = () => {
   return (
 
     <>
+    <div className="nav">
     <div id="heading">
     <h1>Indian Post Office Pin Code Locator</h1>
     </div>
@@ -77,9 +80,11 @@ const Navbar = () => {
         <button onClick={onChangeHandler} className="searchBtn">Search</button>
         <button onClick={changeThemeHandler}>{state==="dark" ? "Day" :"Night"}</button>
       </div>
-      <div id="loader">{loader && <Loader/>}</div>
-
-      <div ref={cntnr} className="details">
+      </div>
+      {loader?(
+        <div id="loader">{<Loader/>}</div>
+      ):(
+        <div ref={cntnr} className="details">
         {post &&
           post.map((obj, index) => (
             <div className={state==="light" ? "post" :"apost"} key={index}>
@@ -91,6 +96,13 @@ const Navbar = () => {
             </div>
           ))}
       </div>
+      
+      )
+
+      }
+      
+    
+     
     </>
   );
 };

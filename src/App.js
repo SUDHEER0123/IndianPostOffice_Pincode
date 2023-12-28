@@ -20,7 +20,6 @@ function App() {
 
   return (
     <div className={state}>
-      <Clock />
       <myContext.Provider value={{ state, setState}}>
       <Navbar />
       </myContext.Provider>
